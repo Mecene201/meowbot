@@ -1,0 +1,248 @@
+/* Define neon-inspired CSS variables with a warm yellow-brown gradient style */
+:root {
+  --primary-color: #a4e05b;       /* Softer green */
+  --secondary-color: #d88d3d;     /* Warm, muted orange-brown */
+  --bg-dark: #1a1a1a;
+  --text-light: #f0f0f0;
+  --white: #fff;
+}
+
+/* Use raindrop.gif as a fixed background for the entire page */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: url("https://Mecene201.github.io/website/raindrop.gif") no-repeat center center fixed;
+  background-size: cover;
+  color: var(--text-light);
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styling */
+.neon-header {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 2.5rem 0;
+  box-shadow: 0 0 20px var(--primary-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.logo {
+  max-width: 100px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.neon-title {
+  font-size: 3.2rem;
+  animation: neonGlow 1.5s ease-in-out infinite alternate;
+}
+
+.neon-tagline {
+  font-size: 1.3rem;
+  margin-top: 0.8rem;
+  opacity: 0.85;
+}
+
+/* Header buttons */
+.header-buttons {
+  margin-top: 10px;
+}
+
+/* Neon Glow Animation for Header */
+@keyframes neonGlow {
+  from {
+    text-shadow: 0 0 4px var(--primary-color), 0 0 8px var(--primary-color),
+                 0 0 16px var(--secondary-color);
+  }
+  to {
+    text-shadow: 0 0 6px var(--primary-color), 0 0 12px var(--primary-color),
+                 0 0 20px var(--secondary-color);
+  }
+}
+
+/* Main container styling */
+main.container-fluid {
+  background: transparent;
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* Features Section Background: no separate background here since we use body background */
+.features-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Section titles with soft neon underline */
+.section-title {
+  font-size: 1.8rem;
+  margin: 1rem 0;
+  border-bottom: 3px solid var(--primary-color);
+  padding-bottom: 0.3rem;
+  color: var(--primary-color);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Feature Card Styling: centered cards at 50% width and fixed height */
+.feature-card {
+  background: rgba(0, 0, 0, 0.65);
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  width: 50%;
+  height: 400px;
+  margin: 3rem auto;
+  padding: 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.feature-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.feature-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  text-shadow: 0 0 6px var(--primary-color);
+}
+
+.feature-description {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--text-light);
+}
+
+/* Flex layout for features with GIFs */
+.utility-feature,
+.social-feature,
+.gambling-feature,
+.confessions-feature,
+.economy-feature,
+.profile-feature {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.utility-text,
+.social-text,
+.gambling-text,
+.confessions-text,
+.economy-text,
+.profile-text {
+  flex: 1;
+  padding-right: 1rem;
+}
+.utility-gif,
+.social-gif,
+.gambling-gif,
+.confessions-gif,
+.economy-gif,
+.profile-gif {
+  flex: 1;
+  text-align: right;
+}
+
+/* Common style for all feature GIF images */
+.feature-gif {
+  max-width: 300px;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+}
+
+/* Glowing Neon Buttons with softened effects */
+.neon-btn {
+  font-weight: bold;
+  padding: 0.8rem 1.6rem;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  background-color: var(--primary-color);
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.neon-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 12px var(--primary-color), 0 0 20px var(--secondary-color);
+  background-color: var(--secondary-color);
+}
+
+/* Footer styling */
+.neon-footer {
+  background: #111;
+  padding: 1.5rem 0;
+  text-align: center;
+  box-shadow: 0 -4px 12px rgba(164, 224, 91, 0.3);
+}
+
+.neon-footer p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Image styling for banner image (clickable logo) */
+.neon-image {
+  border: 3px solid var(--primary-color);
+  border-radius: 8px;
+  box-shadow: 0 0 15px var(--primary-color);
+  transition: transform 0.3s ease;
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+.neon-image:hover {
+  transform: scale(1.05);
+}
+
+/* Extra info section spacing (if needed) */
+#extra-info {
+  margin-top: 3rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .feature-card {
+    width: 90%;
+    height: auto;
+    margin: 2rem auto;
+    padding: 1.5rem;
+  }
+  
+  .utility-feature,
+  .social-feature,
+  .gambling-feature,
+  .confessions-feature,
+  .economy-feature,
+  .profile-feature {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .utility-text,
+  .social-text,
+  .gambling-text,
+  .confessions-text,
+  .economy-text,
+  .profile-text,
+  .utility-gif,
+  .social-gif,
+  .gambling-gif,
+  .confessions-gif,
+  .economy-gif,
+  .profile-gif {
+    padding-right: 0;
+    text-align: center;
+  }
+}
